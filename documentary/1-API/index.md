@@ -3,23 +3,26 @@
 The package is available by importing its default function:
 
 ```js
-import context from '@depack/context'
+import JSXContext from '@depack/context'
 ```
 
 %~%
 
-```## context
+## class JSXContext
+
+This instance of the test context provides the testing API for JSX components.
+
+```### getVNode => Preact.VNode
 [
-  ["arg1", "string"],
-  ["arg2?", "boolean"]
+  ["input", "string"]
 ]
 ```
 
-Call this function to get the result you want.
+Transforms the string input into JSX VNode.
 
-%TYPEDEF types/index.xml%
+<!-- %TYPEDEF types/index.xml% -->
 
-%EXAMPLE: example/example.js, ../src => @depack/context%
+%EXAMPLE: example/example.jsx, ../src => @depack/context%
 %FORK example example/example%
 
 %~%
