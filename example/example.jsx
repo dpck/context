@@ -1,10 +1,22 @@
+import { inspect } from 'util'
+/* start example */
 /* yarn example/ */
 import JSXContext from '../src'
 
+const Container = ({ children }) => (<body>{
+  children
+}</body>)
+
 const context = new JSXContext()
 const s = context.getVNode(
-  `<div id="id" className="Class" required>
+  `
+<Container>
+  <div id="id" className="Class" required>
     <span>Example</span>
-  </div>`
+  </div>
+</Container>`,
+  { Container },
 )
-console.log(s)
+/* end example */
+console.log(inspect(s, {
+  depth: 100, breakLength: 40 }))

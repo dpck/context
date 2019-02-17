@@ -1,10 +1,11 @@
 ```### getVNode => Preact.VNode
 [
-  ["input", "string"]
+  ["input", "string"],
+  ["context?", "*"]
 ]
 ```
 
-Transforms the string input into JSX VNode.
+Transforms the string input into JSX VNode. The global variables and references can be passed in the context.
 
 <!-- %TYPEDEF types/index.xml% -->
 

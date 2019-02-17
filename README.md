@@ -13,7 +13,7 @@ yarn add -E @depack/context
 - [Table Of Contents](#table-of-contents)
 - [API](#api)
 - [class JSXContext](#class-jsxcontext)
-  * [`getVNode(input: string): Preact.VNode`](#getvnodeinput-string-preactvnode)
+  * [`getVNode(input: string, context?: *): Preact.VNode`](#getvnodeinput-stringcontext--preactvnode)
   * [`render(vnode: VNode, opts?: RenderConfig, contexts?: {}): string`](#rendervnode-vnodeopts-renderconfigcontexts--string)
     * [`RenderConfig`](#type-renderconfig)
 - [Using In A Test](#using-in-a-test)
@@ -35,32 +35,47 @@ import JSXContext from '@depack/context'
 
 This instance of the test context provides the testing API for JSX components.
 
-### `getVNode(`<br/>&nbsp;&nbsp;`input: string,`<br/>`): Preact.VNode`
+### `getVNode(`<br/>&nbsp;&nbsp;`input: string,`<br/>&nbsp;&nbsp;`context?: *,`<br/>`): Preact.VNode`
 
-Transforms the string input into JSX VNode.
+Transforms the string input into JSX VNode. The global variables and references can be passed in the context.
 
 ```jsx
 /* yarn example/ */
 import JSXContext from '@depack/context'
 
+const Container = ({ children }) => (<body>{
+  children
+}</body>)
+
 const context = new JSXContext()
 const s = context.getVNode(
-  `<div id="id" className="Class" required>
+  `
+<Container>
+  <div id="id" className="Class" required>
     <span>Example</span>
-  </div>`
+  </div>
+</Container>`,
+  { Container },
 )
-console.log(s)
 ```
 ```js
 VNode {
-  nodeName: 'div',
+  nodeName: [Function: Container],
   children: 
    [ VNode {
-       nodeName: 'span',
-       children: [Array],
-       attributes: {},
+       nodeName: 'div',
+       children: 
+        [ VNode {
+            nodeName: 'span',
+            children: [ 'Example' ],
+            attributes: {},
+            key: undefined } ],
+       attributes: 
+        { id: 'id',
+          className: 'Class',
+          required: '' },
        key: undefined } ],
-  attributes: { id: 'id', className: 'Class', required: '' },
+  attributes: {},
   key: undefined }
 ```
 
