@@ -2,7 +2,7 @@
 [
   ["vnode", "VNode"],
   ["opts?", "RenderOpts"],
-  ["contexts?", "Array<Context>"]
+  ["contexts?", "{}"]
 ]
 ```
 

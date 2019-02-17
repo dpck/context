@@ -1,6 +1,7 @@
 let jsx = require('@a-la/jsx'); if (jsx && jsx.__esModule) jsx = jsx.default;
 const { runInNewContext } = require('vm');
 const { h: preact } = require('preact');
+let render = require('@depack/render'); if (render && render.__esModule) render = render.default;
 
 /**
  * The class for context-testing JSX.
@@ -16,6 +17,9 @@ const { h: preact } = require('preact');
     runInNewContext(`test = ${jsx(input)}`, sandbox)
     const { test } = sandbox
     return test
+  }
+  get render() {
+    return render
   }
 }
 
