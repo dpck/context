@@ -14,6 +14,8 @@ yarn add -E @depack/context
 - [API](#api)
 - [class JSXContext](#class-jsxcontext)
   * [`getVNode(input: string): Preact.VNode`](#getvnodeinput-string-preactvnode)
+    * [`RenderConfig`](#type-renderconfig)
+  * [`render(vnode: VNode, opts?: RenderOpts, contexts?: Array<Context>): string`](#rendervnode-vnodeopts-renderoptscontexts-arraycontext-string)
 - [Using In A Test](#using-in-a-test)
 - [Copyright](#copyright)
 
@@ -62,7 +64,40 @@ VNode {
   key: undefined }
 ```
 
-<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/2.svg?sanitize=true"></a></p>
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/2.svg?sanitize=true" width="15"></a></p>
+
+### `render(`<br/>&nbsp;&nbsp;`vnode: VNode,`<br/>&nbsp;&nbsp;`opts?: RenderOpts,`<br/>&nbsp;&nbsp;`contexts?: Array<Context>,`<br/>`): string`
+
+Renders the JSX into the string.
+
+`import('preact').VNode` __<a name="type-vnode">`VNode`</a>__
+
+__<a name="type-renderconfig">`RenderConfig`</a>__: Rendering options.
+
+|    Name    |   Type    |                                                    Description                                                    | Default |
+| ---------- | --------- | ----------------------------------------------------------------------------------------------------------------- | ------- |
+| addDoctype | _boolean_ | Adds the `<!doctype html>` at the beginning of the return string.                                                 | `false` |
+| shallow    | _boolean_ | If `true`, renders nested Components as HTML elements (`<Foo a="b" />`).                                          | `false` |
+| xml        | _boolean_ | If `true`, uses self-closing tags for elements without children.                                                  | `false` |
+| pretty     | _boolean_ | If `true`, adds `  ` whitespace for readability. Pass a string to indicate the indentation character, e.g., `\t`. | `false` |
+| lineLength | _number_  | The number of characters on one line above which the line should be split in the `pretty` mode.                   | `40`    |
+
+```jsx
+import JSXContext from '@depack/context'
+
+const context = new JSXContext()
+const s = context.render(
+  <div id="id" className="Class" required>
+    <span>Example</span>
+  </div>
+)
+console.log(s)
+```
+```js
+<div id="id" class="Class" required><span>Example</span></div>
+```
+
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/3.svg?sanitize=true"></a></p>
 
 ## Using In A Test
 
@@ -154,7 +189,7 @@ For example, the pretty-printing adds the additional attribute and points to the
 /**/
 ```
 
-<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/3.svg?sanitize=true"></a></p>
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/4.svg?sanitize=true"></a></p>
 
 ## Copyright
 

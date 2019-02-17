@@ -1,6 +1,7 @@
 import jsx from '@a-la/jsx'
 import { runInNewContext } from 'vm'
 import { h as preact } from 'preact'
+import render from '@depack/render'
 
 /**
  * The class for context-testing JSX.
@@ -16,6 +17,9 @@ export default class JSXContext {
     runInNewContext(`test = ${jsx(input)}`, sandbox)
     const { test } = sandbox
     return test
+  }
+  get render() {
+    return render
   }
 }
 
