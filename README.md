@@ -14,8 +14,8 @@ yarn add -E @depack/context
 - [API](#api)
 - [class JSXContext](#class-jsxcontext)
   * [`getVNode(input: string): Preact.VNode`](#getvnodeinput-string-preactvnode)
-    * [`RenderConfig`](#type-renderconfig)
   * [`render(vnode: VNode, opts?: RenderOpts, contexts?: Array<Context>): string`](#rendervnode-vnodeopts-renderoptscontexts-arraycontext-string)
+    * [`RenderConfig`](#type-renderconfig)
 - [Using In A Test](#using-in-a-test)
 - [Copyright](#copyright)
 
