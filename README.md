@@ -104,12 +104,14 @@ const context = new JSXContext()
 const s = context.render(
   <div id="id" className="Class" required>
     <span>Example</span>
-  </div>
-)
+  </div>,
+  { pretty: true })
 console.log(s)
 ```
 ```js
-<div id="id" class="Class" required><span>Example</span></div>
+<div id="id" class="Class" required>
+  <span>Example</span>
+</div>
 ```
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/3.svg?sanitize=true"></a></p>
