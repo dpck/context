@@ -14,7 +14,7 @@ yarn add -E @depack/context
 - [API](#api)
 - [class JSXContext](#class-jsxcontext)
   * [`getVNode(input: string): Preact.VNode`](#getvnodeinput-string-preactvnode)
-  * [`render(vnode: VNode, opts?: RenderOpts, contexts?: {}): string`](#rendervnode-vnodeopts-renderoptscontexts--string)
+  * [`render(vnode: VNode, opts?: RenderConfig, contexts?: {}): string`](#rendervnode-vnodeopts-renderconfigcontexts--string)
     * [`RenderConfig`](#type-renderconfig)
 - [Using In A Test](#using-in-a-test)
 - [Copyright](#copyright)
@@ -66,7 +66,7 @@ VNode {
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/2.svg?sanitize=true" width="15"></a></p>
 
-### `render(`<br/>&nbsp;&nbsp;`vnode: VNode,`<br/>&nbsp;&nbsp;`opts?: RenderOpts,`<br/>&nbsp;&nbsp;`contexts?: {},`<br/>`): string`
+### `render(`<br/>&nbsp;&nbsp;`vnode: VNode,`<br/>&nbsp;&nbsp;`opts?: RenderConfig,`<br/>&nbsp;&nbsp;`contexts?: {},`<br/>`): string`
 
 Renders the JSX into the string.
 

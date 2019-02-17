@@ -1,7 +1,7 @@
 ```### render => string
 [
   ["vnode", "VNode"],
-  ["opts?", "RenderOpts"],
+  ["opts?", "RenderConfig"],
   ["contexts?", "{}"]
 ]
 ```
