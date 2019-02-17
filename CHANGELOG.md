@@ -1,5 +1,9 @@
 ## 17 February 2019
 
+### 1.1.1
+
+- [deps] Update render for correct JSDoc.
+
 ### 1.1.0
 
 - [feature] Assign passed global context.
