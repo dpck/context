@@ -48,7 +48,7 @@ const s = context.getVNode(
 )
 console.log(s)
 ```
-```
+```js
 VNode {
   nodeName: 'div',
   children: 

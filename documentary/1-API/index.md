@@ -23,6 +23,6 @@ Transforms the string input into JSX VNode.
 <!-- %TYPEDEF types/index.xml% -->
 
 %EXAMPLE: example/example.jsx, ../src => @depack/context%
-%FORK example example/example%
+%FORK-js example example/example%
 
 %~%
