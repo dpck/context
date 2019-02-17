@@ -1,21 +1,22 @@
-const { debuglog } = require('util');
-
-const LOG = debuglog('@depack/context')
+let jsx = require('@a-la/jsx'); if (jsx && jsx.__esModule) jsx = jsx.default;
+const { runInNewContext } = require('vm');
+const { h: preact } = require('preact');
 
 /**
- * The Test Context To Render JSX Into Strings For Mask Testing With Zoroaster.
- * @param {Config} [config] Options for the program.
- * @param {boolean} [config.shouldRun=true] A boolean option. Default `true`.
- * @param {string} config.text A text to return.
+ * The class for context-testing JSX.
  */
-               async function context(config = {}) {
-  const {
-    shouldRun = true,
-    text,
-  } = config
-  if (!shouldRun) return
-  LOG('@depack/context called with %s', text)
-  return text
+               class JSXContext {
+  /**
+   * Transpiles JSX and returns the VNode created with Preact's `h`.
+   * @param {string} input The input to evaluate into the vnode.
+   * @returns {import('preact').VNode} The VNode
+   */
+  getVNode(input) {
+    const sandbox = { require, h: preact }
+    runInNewContext(`test = ${jsx(input)}`, sandbox)
+    const { test } = sandbox
+    return test
+  }
 }
 
 /* documentary types/index.xml */
@@ -26,4 +27,4 @@ const LOG = debuglog('@depack/context')
  */
 
 
-module.exports = context
+module.exports = JSXContext
