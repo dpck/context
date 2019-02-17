@@ -1,6 +1,6 @@
 // returns the correct output
-test
+<div className="Class" id="test"></div>
 
 /* expected */
-test
+<div class="Class" id="test"></div>
 /**/

@@ -8,15 +8,6 @@ const T = {
   'is a function'() {
     equal(typeof context, 'function')
   },
-  async 'calls package without error'() {
-    await context()
-  },
-  async 'gets a link to the fixture'({ FIXTURE }) {
-    const res = await context({
-      text: FIXTURE,
-    })
-    ok(res, FIXTURE)
-  },
 }
 
 export default T
