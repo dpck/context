@@ -30,7 +30,12 @@
   },
   "keywords": [
     "context",
-    "depack"
+    "depack",
+    "test",
+    "zoroaster",
+    "mask",
+    "testing",
+    "jsx"
   ],
   "author": "Anton <anton@adc.sh>",
   "license": "MIT",
