@@ -3,14 +3,15 @@ import JSXContext from '../../src'
 
 export default makeTestSuite('test/result/index.md', {
   /**
-   * @type {string} input
-   * @type {JSXContext} c
+   * @param {string} input
+   * @param {JSXContext} c
    */
   getResults(input, { getVNode, render }) {
     const vnode = getVNode(input)
     const res = render(vnode)
     return res
   },
+  splitRe: /^## /gm,
   context: JSXContext,
 })
 
