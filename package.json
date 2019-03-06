@@ -1,6 +1,6 @@
 {
   "name": "@depack/context",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "The Test Context To Render JSX Into Strings For Mask Testing With Zoroaster.",
   "main": "build/index.js",
   "module": "src/index.js",
